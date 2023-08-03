@@ -4,4 +4,4 @@ python-dotenv
 pydantic==1.*
 langchain
 bs4
-tiktoken
+tiktoken==0.4.0
