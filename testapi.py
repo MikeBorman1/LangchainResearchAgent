@@ -1,7 +1,7 @@
 import requests
 
 res = requests.post(
-    "https://researchagent.onrender.com",
+    "https://searchagent.onrender.com",
     json={
         "query": "Metas latest products and news"
     }

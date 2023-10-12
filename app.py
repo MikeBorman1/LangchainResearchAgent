@@ -1,7 +1,7 @@
 import os
 from dotenv import load_dotenv
 
-from langchain import PromptTemplate
+from langchain.prompts import PromptTemplate
 from langchain.agents import initialize_agent, Tool
 from langchain.agents import AgentType
 from langchain.chat_models import ChatOpenAI
@@ -20,7 +20,7 @@ from fastapi import FastAPI
 #import streamlit as st
 
 load_dotenv()
-brwoserless_api_key = os.getenv("BROWSERLESS_API_KEY")
+browserless_api_key = os.getenv("BROWSERLESS_API_KEY")
 serper_api_key = os.getenv("SERP_API_KEY")
 
 # 1. Tool for search
@@ -66,7 +66,7 @@ def scrape_website(objective: str, url: str):
     data_json = json.dumps(data)
 
     # Send the POST request
-    post_url = f"https://chrome.browserless.io/content?token={brwoserless_api_key}"
+    post_url = f"https://chrome.browserless.io/content?token={browserless_api_key}"
     response = requests.post(post_url, headers=headers, data=data_json)
     
     # Check the response status code
